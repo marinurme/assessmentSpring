@@ -30,7 +30,7 @@ CREATE TABLE Orders (
 CREATE TABLE Product (
                          id serial  NOT NULL,
                          name varchar(255)  NOT NULL,
-                         sku_code int  NOT NULL,
+                         sku_code varchar(255)  NOT NULL,
                          unit_price int  NOT NULL,
                          CONSTRAINT Product_pk PRIMARY KEY (id)
 );

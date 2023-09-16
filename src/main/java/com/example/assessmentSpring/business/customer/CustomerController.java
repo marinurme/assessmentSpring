@@ -12,7 +12,7 @@ public class CustomerController {
     @Resource
     private CustomerService customerService;
 
-    @PostMapping("/create")
+    @PostMapping("/create/customer")
     @Operation(summary = "Creates new customer")
     public void createNewCustomer(@RequestBody CustomerDto customer){
         customerService.createNewCustomer(customer);

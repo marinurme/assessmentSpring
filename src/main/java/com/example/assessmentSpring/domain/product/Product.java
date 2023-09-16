@@ -1,6 +1,5 @@
 package com.example.assessmentSpring.domain.product;
 
-import com.example.assessmentSpring.domain.order.Orderline;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -17,11 +16,6 @@ public class Product {
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "orderline_id", nullable = false)
-    private Orderline orderline;
-
     @Size(max = 255)
     @NotNull
     @Column(name = "name", nullable = false)
@@ -29,10 +23,19 @@ public class Product {
 
     @NotNull
     @Column(name = "sku_code", nullable = false)
-    private Integer skuCode;
+    private String skuCode;
 
     @NotNull
     @Column(name = "unit_price", nullable = false)
     private Integer unitPrice;
+
+    public Product() {
+    }
+
+    public Product (String name, String skuCode, Integer unitPrice) {
+        this.name = name;
+        this.skuCode = skuCode;
+        this.unitPrice = unitPrice;
+    }
 
 }

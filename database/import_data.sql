@@ -8,10 +8,10 @@ INSERT INTO public.orders (id, customer_id, dos) VALUES (DEFAULT, 2, '2023-09-16
 INSERT INTO public.orders (id, customer_id, dos) VALUES (DEFAULT, 3, '2023-09-17');
 INSERT INTO public.orders (id, customer_id, dos) VALUES (DEFAULT, 4, '2023-09-18');
 
-INSERT INTO public.product (id, name, sku_code, unit_price) VALUES (DEFAULT, 'apples', 45678, 2);
-INSERT INTO public.product (id, name, sku_code, unit_price) VALUES (DEFAULT,'oranges', 45678, 3);
-INSERT INTO public.product (id, name, sku_code, unit_price) VALUES (DEFAULT, 'potatoes', 45678, 4);
-INSERT INTO public.product (id,name, sku_code, unit_price) VALUES (DEFAULT, 'tomatoes', 45678, 5);
+INSERT INTO public.product (id, name, sku_code, unit_price) VALUES (DEFAULT, 'apples', '45678', 2);
+INSERT INTO public.product (id, name, sku_code, unit_price) VALUES (DEFAULT,'oranges', '45678', 3);
+INSERT INTO public.product (id, name, sku_code, unit_price) VALUES (DEFAULT, 'potatoes', '45678', 4);
+INSERT INTO public.product (id,name, sku_code, unit_price) VALUES (DEFAULT, 'tomatoes', '45678', 5);
 
 INSERT INTO public.orderline (id,product_id, order_id, quantity) VALUES (DEFAULT, 1, 1, 100);
 INSERT INTO public.orderline (id,product_id, order_id, quantity) VALUES (DEFAULT, 2 ,2, 200);
