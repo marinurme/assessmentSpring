@@ -1,8 +1,8 @@
-
+-- tables
 -- Table: Customers
 CREATE TABLE Customers (
                            id serial  NOT NULL,
-                           registration_code int  NOT NULL,
+                           registration_code int  NULL,
                            full_name varchar(255)  NOT NULL,
                            email varchar(255)  NOT NULL,
                            telephone varchar(255)  NOT NULL,
@@ -12,6 +12,7 @@ CREATE TABLE Customers (
 -- Table: OrderLine
 CREATE TABLE OrderLine (
                            id serial  NOT NULL,
+                           Product_id int  NOT NULL,
                            Order_id int  NOT NULL,
                            quantity int  NOT NULL,
                            CONSTRAINT OrderLine_pk PRIMARY KEY (id)
@@ -28,7 +29,6 @@ CREATE TABLE Orders (
 -- Table: Product
 CREATE TABLE Product (
                          id serial  NOT NULL,
-                         OrderLine_id int  NOT NULL,
                          name varchar(255)  NOT NULL,
                          sku_code int  NOT NULL,
                          unit_price int  NOT NULL,
@@ -44,18 +44,18 @@ ALTER TABLE OrderLine ADD CONSTRAINT OrderLine_Order
             INITIALLY IMMEDIATE
 ;
 
--- Reference: Order_Customer (table: Orders)
-ALTER TABLE Orders ADD CONSTRAINT Order_Customer
-    FOREIGN KEY (Customer_id)
-        REFERENCES Customers (id)
+-- Reference: OrderLine_Product (table: OrderLine)
+ALTER TABLE OrderLine ADD CONSTRAINT OrderLine_Product
+    FOREIGN KEY (Product_id)
+        REFERENCES Product (id)
         NOT DEFERRABLE
             INITIALLY IMMEDIATE
 ;
 
--- Reference: Product_OrderLine (table: Product)
-ALTER TABLE Product ADD CONSTRAINT Product_OrderLine
-    FOREIGN KEY (OrderLine_id)
-        REFERENCES OrderLine (id)
+-- Reference: Order_Customer (table: Orders)
+ALTER TABLE Orders ADD CONSTRAINT Order_Customer
+    FOREIGN KEY (Customer_id)
+        REFERENCES Customers (id)
         NOT DEFERRABLE
             INITIALLY IMMEDIATE
 ;

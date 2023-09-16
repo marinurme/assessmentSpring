@@ -16,11 +16,10 @@ import java.util.Set;
 @Table(name = "customers")
 public class Customer {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "customers_id_gen")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @NotNull
     @Column(name = "registration_code", nullable = false)
     private Integer registrationCode;
 
@@ -41,5 +40,14 @@ public class Customer {
 
     @OneToMany(mappedBy = "customer")
     private Set<Order> orders = new LinkedHashSet<>();
+
+    public Customer() {
+    }
+
+    public Customer(String fullName, String email, String telephone) {
+        this.fullName = fullName;
+        this.email = email;
+        this.telephone = telephone;
+    }
 
 }

@@ -32,6 +32,7 @@ dependencies {
 	testImplementation ("io.projectreactor:reactor-test")
 
 	implementation ("org.mapstruct:mapstruct:1.5.5.Final")
+	implementation ("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0")
 
 }
 

@@ -1,4 +1,4 @@
-package com.example.assessmentSpring.domain.product;
+package com.example.assessmentSpring.business.product;
 
 import org.springframework.stereotype.Service;
 
