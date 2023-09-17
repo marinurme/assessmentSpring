@@ -6,5 +6,5 @@ import org.mapstruct.*;
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = MappingConstants.ComponentModel.SPRING)
 public interface ProductMapper {
 
-    ProductDto toCustomerDto(ProductDto product);
+    ProductDto toProductDto(ProductDto product);
 }

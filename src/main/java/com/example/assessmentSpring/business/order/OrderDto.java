@@ -17,6 +17,8 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderDto implements Serializable {
+    private Integer orderId;
+
     private Integer customerId;
     @NotNull
     private String dateOfSubmission;

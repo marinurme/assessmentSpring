@@ -1,6 +1,5 @@
 package com.example.assessmentSpring.domain.order;
 
-import com.example.assessmentSpring.domain.order.Order;
 import com.example.assessmentSpring.domain.product.Product;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -11,7 +10,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "orderline")
-public class Orderline {
+public class OrderLine {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
