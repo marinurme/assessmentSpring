@@ -22,7 +22,7 @@ CREATE TABLE OrderLine (
 CREATE TABLE Orders (
                         id serial  NOT NULL,
                         Customer_id int  NOT NULL,
-                        dos date  NOT NULL,
+                        dos varchar(255) NOT NULL,
                         CONSTRAINT Orders_pk PRIMARY KEY (id)
 );
 

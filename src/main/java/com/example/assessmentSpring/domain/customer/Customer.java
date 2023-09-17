@@ -38,8 +38,6 @@ public class Customer {
     @Column(name = "telephone", nullable = false)
     private String telephone;
 
-    @OneToMany(mappedBy = "customer")
-    private Set<Order> orders = new LinkedHashSet<>();
 
     public Customer() {
     }

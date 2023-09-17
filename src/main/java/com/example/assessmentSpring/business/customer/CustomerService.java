@@ -1,8 +1,6 @@
 package com.example.assessmentSpring.business.customer;
 
-import com.example.assessmentSpring.business.customer.CustomerDto;
 import com.example.assessmentSpring.domain.customer.Customer;
-import com.example.assessmentSpring.domain.customer.CustomerMapper;
 import com.example.assessmentSpring.domain.customer.CustomerRepository;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
@@ -16,5 +14,9 @@ public class CustomerService {
     public void createNewCustomer(CustomerDto customer) {
         Customer newCustomer = new Customer(customer.getFullName(), customer.getEmail(), customer.getTelephone());
         customerRepository.save(newCustomer);
+    }
+
+    public Customer findCustomerBy(Integer customerId) {
+        return customerRepository.getReferenceById(customerId);
     }
 }

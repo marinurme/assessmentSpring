@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -21,15 +22,20 @@ public class Order {
     private Integer id;
 
     @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
     @NotNull
     @Column(name = "dos", nullable = false)
-    private LocalDate dos;
+    private String dos;
 
-    @OneToMany(mappedBy = "order")
-    private Set<Orderline> orderlines = new LinkedHashSet<>();
+    public Order() {
+    }
+
+    public Order(Customer customerId, String dateOfSubmission) {
+        this.customer = customerId;
+        this.dos = dateOfSubmission;
+    }
 
 }
