@@ -1,5 +1,6 @@
-package com.example.assessmentSpring.business.order;
+package com.example.assessmentSpring.domain.order;
 
+import com.example.assessmentSpring.business.order.OrderDto;
 import com.example.assessmentSpring.domain.order.Order;
 import org.mapstruct.*;
 

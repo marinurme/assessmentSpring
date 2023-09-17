@@ -1,5 +1,6 @@
 package com.example.assessmentSpring.domain.order;
 
+import com.example.assessmentSpring.business.order.OrderLineDto;
 import org.mapstruct.*;
 
 import java.util.List;

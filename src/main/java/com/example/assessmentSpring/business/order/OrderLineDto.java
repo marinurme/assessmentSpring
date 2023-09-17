@@ -1,6 +1,7 @@
-package com.example.assessmentSpring.domain.order;
+package com.example.assessmentSpring.business.order;
 
 import com.example.assessmentSpring.domain.customer.Customer;
+import com.example.assessmentSpring.domain.order.OrderLine;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
